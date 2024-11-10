@@ -29,9 +29,10 @@ class FatchApiController extends GetxController {
         postlist.addAll(data.map((e) => ApiModel.fromJson(e)).toList());
       }
     } on SocketException {
-      print("NO Internet");
+      Get.snackbar("Hello Dear", "No Internet");
     } catch (e) {
-      print("Error: $e");
+      Get.snackbar("Error", "$e");
+
     }
 
     var myMap = box.toMap().values.toList();
